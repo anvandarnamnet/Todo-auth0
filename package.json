@@ -22,7 +22,8 @@
     "oauth2-server": "^2.4.1",
     "passport": "^0.3.2",
     "passport-auth0": "^0.6.0",
-    "timeedit-api": "^1.1.2"
+    "timeedit-api": "^1.1.2",
+    "universal-analytics": "^0.4.8"
   },
   "repository": {
     "type": "git",
