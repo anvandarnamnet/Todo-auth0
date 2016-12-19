@@ -1,0 +1,29 @@
+<% include ../partials/header %>
+<nav class="navbar navbar-default navbar-static-top navbar-inverse">
+  <div class="container">
+    <ul class="nav navbar-nav">
+      <li>
+        <a href="/"><span class="glyphicon glyphicon-home"></span> Home</a>
+      </li>
+      <li>
+        <a href="/user"><span class="glyphicon glyphicon-user"></span> Your account</a>
+      </li>
+    </ul>
+    <ul class="nav navbar-nav navbar-right">
+      <li class="navbar-right">
+        <a href="/logout">Log out <span class="glyphicon glyphicon-log-out"></span></a>
+      </li>
+    </ul>
+  </div>
+</nav>
+
+	<div class="container">
+		<h1>Add a todo</h1>
+		<form action="/addtodo" method="post">
+      <h4>Description</h4> <input name="desc" type="text" class="form-control" placeholder="Description" required autofocus />  <br />
+      <h4>Date</h4> <input name="date" type="date" class="form-control" placeholder="<%= new Date().toJSON().slice(0,10); %>" required />  <br />
+      <input type="submit" value="Send" class="btn btn-success" />
+    </form>
+	</div>
+
+  <% include ../partials/footer.ejs%>

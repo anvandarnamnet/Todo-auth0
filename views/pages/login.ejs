@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Login</title>
+    <link rel="stylesheet" href="/stylesheets/style.css">
+    <script src="https://cdn.auth0.com/js/lock/10.3/lock.min.js"></script>
+  </head>
+  <body>
+    <div id="root" style="width: 280px; margin: 40px auto; padding: 10px;"></div>
+    <script>
+      var lock = new Auth0Lock('PzwLG899qFespCmk7RjoYR3pVeTpKkKD', 'oskar.eu.auth0.com', { auth: {
+            redirectUrl: 'http://localhost:5000/callback'
+          , responseType: 'code'
+          , params: {
+            scope: 'openid name email picture'
+          }
+        },
+
+        closable:false
+
+      ,languageDictionary: {
+        emailInputPlaceholder: ":O",
+        passwordInputPlaceholder: ":)",
+        title:"Todo App",
+        loginLabel: "Let's get :)",
+        loginSubmitLabel: "Ye, that's right",
+        forgotPasswordAction: "Can't remeber the password?"
+
+  },
+  theme: {
+      logo: 'min.png',
+      primaryColor: '#31324F'
+    }});
+        lock.show();
+    </script>
+</body>
+</html>

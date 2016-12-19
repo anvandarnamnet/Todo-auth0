@@ -1,0 +1,78 @@
+<% include ../partials/header.ejs %>
+<style>
+body{
+	background-color: black;
+	color:white;
+}
+
+th{
+	color:white;
+	font-size: 23px;
+}
+
+td{
+	background-color: black;
+	color:white;
+	font-size: 17px;
+}
+
+p{
+	color:white;
+}
+
+a{
+	color:white;
+}
+
+a:hover{
+	color:white;
+}
+</style>
+<nav class="navbar navbar-default navbar-static-top navbar-inverse">
+
+	<div class="container">
+		<ul class="nav navbar-nav">
+			<li>
+				<a href="/"><span class="glyphicon glyphicon-home"></span> Home</a>
+			</li>
+			<li>
+				<a href="/user"><span class="glyphicon glyphicon-user"></span> <%= user.displayName %></a>
+			</li>
+		</ul>
+
+		<ul class="nav navbar-nav navbar-right">
+			<li class="navbar-right">
+				<a href="/logout">Log out <span class="glyphicon glyphicon-log-out"></span></a>
+			</li>
+		</ul>
+	</div>
+</nav>
+
+<div class="container">
+
+	<table class = "table table-striped">
+		<caption></caption>
+		<thead>
+			<tr>
+				<th>List</th>
+				<th>Date</th>
+				<th></th>
+			</tr>
+		</thead>
+		<tbody>
+			<% for (var i = 0; i < quot.length; i++) { %>
+        <tr>
+          <td><b> <%= quot[i].description %></b></td>
+          <td><%= quot[i].date.toISOString().substring(0, 10); %></td>
+
+					<td><a href = "/delete-todo-item/<%= quot[i]._id %>" class ="btn btn-danger">Delete</a></td>
+        </tr>
+        <% } %>
+		</tbody>
+	</table>
+<div>
+<a id="btn" class="btn btn-success" href="/addtodoitem/<%= listId %>">Add todo</a>
+</div>
+</div>
+
+<% include ../partials/footer.ejs%>

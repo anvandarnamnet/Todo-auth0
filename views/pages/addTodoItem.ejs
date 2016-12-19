@@ -1,0 +1,57 @@
+<% include ../partials/header %>
+<style>
+body{
+	background-color: black;
+	color:white;
+}
+
+th{
+	color:white;
+	font-size: 23px;
+}
+
+td{
+	background-color: black;
+	color:white;
+	font-size: 17px;
+}
+
+p{
+	color:white;
+}
+
+a{
+	color:white;
+}
+
+a:hover{
+	color:white;
+}
+</style>
+<nav class="navbar navbar-default navbar-static-top navbar-inverse">
+  <div class="container">
+    <ul class="nav navbar-nav">
+      <li>
+        <a href="/"><span class="glyphicon glyphicon-home"></span> Home</a>
+      </li>
+      <li>
+        <a href="/user"><span class="glyphicon glyphicon-user"></span> <%= user.displayName %></a>
+      </li>
+    </ul>
+    <ul class="nav navbar-nav navbar-right">
+      <li class="navbar-right">
+        <a href="/logout">Log out <span class="glyphicon glyphicon-log-out"></span></a>
+      </li>
+    </ul>
+  </div>
+</nav>
+
+	<div class="container">
+		<h1>Add a todo item</h1>
+		<form action="/addtodoitem/<%= listId %>" method="post">
+      <h4>Description</h4> <input name="desc" type="text" class="form-control" placeholder="Description" required autofocus />   <br />
+      <input type="submit" value="Add item" class="btn btn-success" />
+    </form>
+	</div>
+
+  <% include ../partials/footer.ejs%>

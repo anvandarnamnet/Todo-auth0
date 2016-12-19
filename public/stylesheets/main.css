@@ -1,0 +1,36 @@
+body{
+  background-color: black;
+  color:white;
+}
+
+th{
+  color:white;
+  font-size: 23px;
+}
+
+td{
+  background-color: black;
+  color:white;
+  font-size: 17px;
+}
+
+p{
+  color:white;
+}
+
+a{
+  color:white;
+}
+
+a:hover{
+  color:white;
+}
+.navbar .navbar-nav {
+  display: inline-block;
+  float: none;
+  vertical-align: top;
+}
+
+.navbar .navbar-collapse {
+  text-align: center;
+}
