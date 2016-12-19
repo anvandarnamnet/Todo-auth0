@@ -9,7 +9,7 @@ var todoItems = require(__dirname + "/../TodoItems");
 var env = {
   AUTH0_CLIENT_ID: 'PzwLG899qFespCmk7RjoYR3pVeTpKkKD',
   AUTH0_DOMAIN: 'oskar.eu.auth0.com',
-  AUTH0_CALLBACK_URL: 'http://localhost:5000/callback'
+  AUTH0_CALLBACK_URL: 'https://fathomless-bayou-11388.herokuapp.com/callback'
 };
 
 mongoose.Promise = global.Promise;
