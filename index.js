@@ -33,7 +33,7 @@ var strategy = new Auth0Strategy({
   passport.use(strategy);
 
   // for google analysis
-  express.use(ua.middleware("UA-89238325-1", {cookieName: '_ga'}));
+  app.use(ua.middleware("UA-89238325-1", {cookieName: '_ga'}));
 
   //serializeUser and deserializeUser
   passport.serializeUser(function(user, done) {
