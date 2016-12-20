@@ -6,6 +6,8 @@ var user = require('./routes/user');
 var routes = require('./routes/index')
 var cookieParser = require('cookie-parser');
 var session = require('express-session')
+var ua = require('universal-analytics');
+
 
 var strategy = new Auth0Strategy({
     domain:       'oskar.eu.auth0.com',
@@ -18,6 +20,8 @@ var strategy = new Auth0Strategy({
     // profile has all the information from the user
     return done(null, profile);
   });
+
+  express.use(ua.middleware("UA-89238325-1", {cookieName: '_ga'}));
 
   passport.use(strategy);
 
