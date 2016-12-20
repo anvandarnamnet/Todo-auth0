@@ -32,8 +32,7 @@ var strategy = new Auth0Strategy({
 
   passport.use(strategy);
 
-  // for google analysis
-  app.use(ua.middleware("UA-89238325-1", {cookieName: '_ga'}));
+
 
   //serializeUser and deserializeUser
   passport.serializeUser(function(user, done) {
@@ -46,6 +45,8 @@ var strategy = new Auth0Strategy({
 
 // the express-app variable
 var app = express();
+// for google analysis
+app.use(ua.middleware("UA-89238325-1", {cookieName: '_ga'}));
 
 // set the port
 app.set('port', (process.env.PORT || 5000));
