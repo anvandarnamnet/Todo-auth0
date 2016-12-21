@@ -17,7 +17,6 @@ mongoose.connect("mongodb://oskar:oskar@ds041432.mlab.com:41432/todolistapps");
 
 /* GET home page. */
 router.get('/', ensureLoggedIn, function(req, res, next) {
-
   var todo = todos.getTodoListByUserId(req.user.id);
   todo.then(function(myTodos){
     res.render('pages/index', {quot: myTodos, user: req.user});
