@@ -80,7 +80,9 @@ app.use('/', routes);
 app.use('/user', user);
 
 // our api router
-app.use('/api', jwtCheck);
+//app.use('/api', jwtCheck);
+
+app.use('/api', api);
 
 
 // start to listen for connections
