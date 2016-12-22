@@ -9,7 +9,7 @@ router.get("/gettodos", function(req,res){
 
   todos.getTodoListByUserId(user).then(function(cb){
     console.log(cb);
-    res.json(cb);
+    res.send(cb);
   });
 
 
