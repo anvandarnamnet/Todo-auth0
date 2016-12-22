@@ -9,7 +9,7 @@ router.get("/gettodos", function(req,res){
     id: 5,
     name: "oskar"
   }
-  res.json(response);
+  res.sned(response);
 });
 
 router.post("/gettodos", function(req, res){
