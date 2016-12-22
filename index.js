@@ -13,7 +13,7 @@ var api = require("./routes/api");
 // for a secured api
 var jwtCheck = jwt({
   secret: 'Aq87xcYCdgrO5VF99BwEYEE-3WiOPgpN7yYeH7gBbWSQf893P8pyVQKWKTqwaHyZ',
-  audience: 'l3do62iz2KROnO90Dvyx0B6IoCHKpTNu'
+  audience: 'PzwLG899qFespCmk7RjoYR3pVeTpKkKD'
 });
 
 
