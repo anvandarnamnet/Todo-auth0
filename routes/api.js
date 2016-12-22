@@ -7,16 +7,16 @@ var todoItems = require("./../TodoItems");
 router.get("/gettodos", function(req,res){
   var user = req.query.user;
 
-  todos.getTodoListByUserId().then(function(cb){
-    console.log(cb);
-  })
+  todos.getTodoListByUserId(user).then(function(cb){
+    res.send(cb);
+  });
 
 
-  var response = {
-    id: 5,
-    name: "oskar"
-  }
-  res.send(response);
+  //var response = {
+    //id: 5,
+    //name: "oskar"
+  //}
+  //res.send(response);
 
 });
 
