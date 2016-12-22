@@ -5,11 +5,13 @@ var todoItems = require("./../TodoItems");
 
 
 router.get("/gettodos", function(req,res){
+  console.log(req.query.id);
   var response = {
     id: 5,
     name: "oskar"
   }
   res.send(response);
+
 });
 
 router.post("/gettodos", function(req, res){
