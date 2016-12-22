@@ -5,12 +5,12 @@ var todoItems = require("./../TodoItems");
 
 
 router.get("/gettodos", function(req,res){
-  console.log(req.query.id);
-  var response = {
-    id: 5,
-    name: "oskar"
-  }
-  res.send(response);
+  var user = req.query.user;
+
+  var todos = todos.getTodoListByListId(user);
+  todos.then(function(cb){
+    res.send(response);
+  });
 
 });
 
