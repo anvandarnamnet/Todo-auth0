@@ -7,8 +7,8 @@ var todoItems = require("./../TodoItems");
 router.get("/gettodos", function(req,res){
   var user = req.query.user;
 
-  var todos = todos.getTodoListByListId(user);
-  todos.then(function(cb){
+  var todo = todos.getTodoListByListId(user);
+  todo.then(function(cb){
     res.send(response);
   });
 
