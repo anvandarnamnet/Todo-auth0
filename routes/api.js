@@ -8,7 +8,7 @@ router.get("/gettodos", function(req,res){
   var user = req.query.user;
 
   todos.getTodoListByUserId(user).then(function(cb){
-    res.send(cb);
+    res.json(cb);
   });
 
 
