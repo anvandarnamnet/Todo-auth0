@@ -23,7 +23,10 @@ router.get("/gettodoitems", function(req,res){
 router.get("/deletetodolist",function(req,res){
   var id = req.query.list;
   todos.removeTodoListByTodoId(id);
-  res.send("success");
+  var response = {
+    oskar:"hej"
+  }
+  res.send(response);
 
 
 })
