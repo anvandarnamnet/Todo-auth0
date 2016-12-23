@@ -3,6 +3,7 @@ var router = express.Router();
 var todos = require("./../Todo")
 var todoItems = require("./../TodoItems");
 
+// the api class, Beta ediition.
 
 router.get("/gettodos", function(req,res){
   var user = req.query.user;

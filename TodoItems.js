@@ -1,5 +1,7 @@
+// The database object
 var mongoose = require("mongoose");
 
+// the database schema
 var todoSchema = mongoose.Schema({
   description: {type: String, required: true},
   date: {type: Date, required: true},
@@ -8,10 +10,11 @@ var todoSchema = mongoose.Schema({
   createdAt: {type: Date, default:Date.now}
 });
 
-
+// model and export the Schema
 var todo = mongoose.model("todoItems", todoSchema);
 module.exports = todo;
 
+// Add a todo in a todolist by the list id
 module.exports.addTodoByListId = function(description, date, user, listId){
   return new Promise(function(resolve, reject){
     var newTodo = new todo({
@@ -33,15 +36,16 @@ module.exports.addTodoByListId = function(description, date, user, listId){
   })
 }
 
+// remove a todo in a todolist by its id
 module.exports.removeTodoById = function(id){
   todo.remove({_id: id}, function(err){
    console.log("sucess!");
  });
 }
 
+// get all the todos in a list
 module.exports.getTodosByListId = function(id, user){
   return new Promise (function(resolve, reject){
-
     var query = todo.find({user: user, listId: id});
 
     query.exec(function(err, todos){
@@ -50,7 +54,6 @@ module.exports.getTodosByListId = function(id, user){
      }
 
      resolve(todos);
-
     });
   });
 }

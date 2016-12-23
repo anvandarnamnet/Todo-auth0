@@ -1,5 +1,6 @@
 var mongoose = require("mongoose");
 
+// the shema of the todolists
 var todoSchema = mongoose.Schema({
   description: {type: String, required: true},
   date: {type: Date, required: true},
@@ -7,22 +8,25 @@ var todoSchema = mongoose.Schema({
   createdAt: {type: Date, default:Date.now}
 });
 
+// model our schema and make it available
 var todo = mongoose.model("todos", todoSchema);
 module.exports = todo;
 
+// remove a list by it's id.
 module.exports.removeTodoListByTodoId = function(id){
   todo.remove({_id: id}, function(err){
    console.log("sucess!");
  });
 }
 
-module.exports.addTodoListByUserId = function(id, titel, date){
+// add a new todolist
+module.exports.addTodoListByUserId = function(user, titel, date){
   return new Promise (function(resolve, reject){
 
     var newTodo = new todo({
       description: titel,
       date: date,
-      user: id
+      user: user
     });
 
     newTodo.save(function(err){
@@ -37,6 +41,7 @@ module.exports.addTodoListByUserId = function(id, titel, date){
 });
 }
 
+// ge a todolist by it's id.
 module.exports.getTodoListByListId = function(id){
   return new Promise (function(resolve, reject){
     var query = todo.find({_id: id});
@@ -50,6 +55,7 @@ module.exports.getTodoListByListId = function(id){
   });
 }
 
+// get all the list assigned to a user.
 module.exports.getTodoListByUserId = function(id){
   return new Promise (function(resolve, reject){
     var query = todo.find({user: id});
