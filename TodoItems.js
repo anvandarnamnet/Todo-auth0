@@ -46,7 +46,7 @@ module.exports.removeTodoById = function(id){
 // get all the todos in a list
 module.exports.getTodosByListId = function(id, user){
   return new Promise (function(resolve, reject){
-    var query = todo.find({user: user, listId: id});
+    var query = todo.find({listId: id});
 
     query.exec(function(err, todos){
      if(err){
