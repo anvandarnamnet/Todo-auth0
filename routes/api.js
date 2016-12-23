@@ -20,6 +20,14 @@ router.get("/gettodoitems", function(req,res){
   })
 });
 
+router.get("/deletetodolist",function(req,res){
+  var id = req.query.list;
+  todos.removeTodoListByTodoId(id);
+  res.send("success");
+
+  })
+})
+
 router.post("/gettodos", function(req, res){
   var user = req.body.user;
 
