@@ -65,7 +65,7 @@ a:hover{
           <td><b> <%= quot[i].description %></b></td>
           <td><%= quot[i].date.toISOString().substring(0, 10); %></td>
 
-					<td><a href = "/delete-todo-item/<%= quot[i]._id %>" class ="btn btn-danger">Delete</a></td>
+					<td><a href = "/delete-todo-item/<%= quot[i].id %>/<%= quot[i]._id %>" class ="btn btn-danger">Delete</a></td>
         </tr>
         <% } %>
 		</tbody>

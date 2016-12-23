@@ -51,8 +51,6 @@ router.get('/logout', function(req, res){
   res.redirect('/');
 });
 
-
-
 router.get("/addtodoitem/:id", ensureLoggedIn, function(req,res){
   res.render("pages/addTodoItem", {listId: req.params.id, user:req.user})
 });
@@ -70,8 +68,8 @@ router.post("/addtodoitem/:id", ensureLoggedIn, function(req,res){
 
 })
 
-router.get("/delete-todo-item/:id", ensureLoggedIn, function(req, res, next){
-    todoItems.removeTodoById(req.params.id);
+router.get("/delete-todo-item/:id/:todoId", ensureLoggedIn, function(req, res, next){
+    todoItems.removeTodoById(req.params.todoId);
     res.redirect("/list/" + req.params.id);
 });
 

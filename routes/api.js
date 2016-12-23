@@ -7,18 +7,7 @@ var todoItems = require("./../TodoItems");
 router.get("/gettodos", function(req,res){
   var user = req.query.user;
 
-  todos.getTodoListByUserId(user).then(function(cb){
-    console.log(cb);
-    res.send(cb);
-  });
-
-
-  //var response = {
-    //id: 5,
-    //name: "oskar"
-  //}
-  //res.send(response);
-
+  todos.getTodoListByUserId(user).then(function(cb){ res.send(cb); });
 });
 
 router.post("/gettodos", function(req, res){
