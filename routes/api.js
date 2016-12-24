@@ -29,14 +29,15 @@ router.get("/deletetodolist",function(req,res){
 
 })
 
-router.get("/addtodolist", function(req,res){
-  var date = req.query.date;
-  var desc = req.query.desc;
-  var user = req.query.user;
-  todos.addTodoListByUserId(user, desc, date).then(function(cb){
+router.post("/addtodolist", function(req,res){
+  //var date = req.body.date;
+  //var desc = req.body.desc;
+  //var user = req.body.user;
+  //todos.addTodoListByUserId(user, desc, date).then(function(cb){
     var response = [];
+    console.log(req.body);
     res.send(response);
-  })
+  //})
 
 });
 
