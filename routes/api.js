@@ -29,6 +29,17 @@ router.get("/deletetodolist",function(req,res){
 
 })
 
+router.get("/addtodolist", function(req,res){
+  var date = req.query.date;
+  var desc = req.query.desc;
+  var user = req.query.user;
+  todo.addTodoListByUserId(user, desc, date).then(function(cb){
+    var response = [];
+    res.send(response);
+  })
+
+});
+
 router.post("/gettodos", function(req, res){
   var user = req.body.user;
 
