@@ -5,23 +5,23 @@ var todoItems = require("./../TodoItems");
 
 // the api class, Beta ediition.
 
-router.get("/gettodos", function(req,res){
-  var user = req.query.user;
+router.post("/gettodos", function(req,res){
+  var user = req.body[0];
 
   todos.getTodoListByUserId(user).then(function(cb){
     res.send(cb);
   });
 });
 
-router.get("/gettodoitems", function(req,res){
-  var listId = req.query.list;
+router.post("/gettodoitems", function(req,res){
+  var listId = req.body[0];
   todoItems.getTodosByListId(listId).then(function(cb){
     res.send(cb);
   })
 });
 
 router.get("/deletetodolist",function(req,res){
-  var id = req.query.list;
+  var id = req.body[0];
   todos.removeTodoListByTodoId(id);
   var response =[];
   res.send(response);
@@ -30,21 +30,16 @@ router.get("/deletetodolist",function(req,res){
 })
 
 router.post("/addtodolist", function(req,res){
-  //var date = req.body.date;
-  //var desc = req.body.desc;
-  //var user = req.body.user;
-  //todos.addTodoListByUserId(user, desc, date).then(function(cb){
+  var date = req.body[1];
+  var desc = req.body[0];
+  var user = req.body[2];
+  todos.addTodoListByUserId(user, desc, date).then(function(cb){
     var response = [];
-    console.log(req.body[0]);
     res.send(response);
-  //})
+  });
 
 });
 
-router.post("/gettodos", function(req, res){
-  var user = req.body.user;
-
-});
 
 
 
