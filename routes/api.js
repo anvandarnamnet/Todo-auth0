@@ -35,7 +35,7 @@ router.post("/addtodolist", function(req,res){
   //var user = req.body.user;
   //todos.addTodoListByUserId(user, desc, date).then(function(cb){
     var response = [];
-    console.log(req.body);
+    console.log(req.body[0]);
     res.send(response);
   //})
 
