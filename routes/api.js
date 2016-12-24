@@ -33,7 +33,7 @@ router.get("/addtodolist", function(req,res){
   var date = req.query.date;
   var desc = req.query.desc;
   var user = req.query.user;
-  todo.addTodoListByUserId(user, desc, date).then(function(cb){
+  todos.addTodoListByUserId(user, desc, date).then(function(cb){
     var response = [];
     res.send(response);
   })
