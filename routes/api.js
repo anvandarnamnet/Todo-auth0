@@ -20,7 +20,7 @@ router.post("/gettodoitems", function(req,res){
   })
 });
 
-router.get("/deletetodolist",function(req,res){
+router.post("/deletetodolist",function(req,res){
   var id = req.body[0];
   todos.removeTodoListByTodoId(id);
   var response =[];
