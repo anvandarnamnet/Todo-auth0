@@ -25,9 +25,18 @@ router.post("/deletetodolist",function(req,res){
   todos.removeTodoListByTodoId(id);
   var response =[];
   res.send(response);
+});
 
+router.post("/addtodoitem", function(req,res){
+  var desc = req.body[0]
+  var listId = req.body[1];
+  var userId = req.body[2];
 
-})
+  todoItems.addTodoByListId(desc, "2000-01-01", userId, listId).then(function(cb){
+    var response = [];
+    res.send(response);
+  });
+});
 
 router.post("/addtodolist", function(req,res){
   var date = req.body[1];
