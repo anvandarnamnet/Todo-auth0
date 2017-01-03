@@ -55,7 +55,7 @@ a:hover{
 		<thead>
 			<tr>
 				<th>List</th>
-				<th>Date</th>
+				<th></th>
 				<th></th>
 			</tr>
 		</thead>
@@ -63,7 +63,7 @@ a:hover{
 			<% for (var i = 0; i < quot.length; i++) { %>
         <tr>
           <td><b> <%= quot[i].description %></b></td>
-          <td><%= quot[i].date.toISOString().substring(0, 10); %></td>
+          <td></td>
 
 					<td><a href = "/delete-todo-item/<%= quot[i].listId %>/<%= quot[i]._id %>" class ="btn btn-danger">Delete</a></td>
         </tr>

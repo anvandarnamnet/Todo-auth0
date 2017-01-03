@@ -24,9 +24,6 @@ var strategy = new Auth0Strategy({
     clientSecret: 'aMKnSLF-dUpe9Xqc2Sa-RJopDD1wyQoQ8tOPD4V0r6VsgZQVjI57cb-aPFsWHbP7',
     callbackURL:  'https://fathomless-bayou-11388.herokuapp.com/callback'
   }, function(accessToken, refreshToken, extraParams, profile, done) {
-    // accessToken is the token to call Auth0 API (not needed in the most cases)
-    // extraParams.id_token has the JSON Web Token
-    // profile has all the information from the user
     return done(null, profile);
   });
 
@@ -51,8 +48,6 @@ app.use(ua.middleware("UA-89238325-1", {cookieName: '_ga'}));
 // set the port
 app.set('port', (process.env.PORT || 5000));
 
-
-
 // views is directory for all template files
 app.set('views', __dirname + '/views');
 app.set('view engine', 'ejs');
@@ -76,12 +71,14 @@ app.use(passport.session());
 
 // redirect the '/' to routes
 app.use('/', routes);
+
 // redirect the '/user' to our user router
 app.use('/user', user);
 
-// our api router
+// secure the api
 app.use('/api', jwtCheck);
 
+// route the api
 app.use('/api', api);
 
 

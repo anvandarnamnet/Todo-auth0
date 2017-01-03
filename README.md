@@ -1,3 +1,5 @@
-# Todo-auth0
+# Todo web app with Auth0
 
-A todo web-app with a secured api. 
+En todo-web app med ett tillhörande säkert api. Detta api har använts för att bygga tillhörande android-app som vars git-rep finns här: https://github.com/anvandarnamnet/Todo-androidclient. All data sparas i en nosql databas och hämtas samt uppdateras av web-serverns api. Detta gör att alla uppdateringar synkas i till både mobilappen och web-appen.
+
+Länk till hemsidan: https://fathomless-bayou-11388.herokuapp.com
