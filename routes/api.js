@@ -3,8 +3,7 @@ var router = express.Router();
 var todos = require("./../Todo")
 var todoItems = require("./../TodoItems");
 
-// the api class, Beta ediition.
-
+// return the todos for a specific user
 router.post("/gettodos", function(req,res){
   var user = req.body[0];
 
@@ -13,6 +12,7 @@ router.post("/gettodos", function(req,res){
   });
 });
 
+// return the todos for a specific list item
 router.post("/gettodoitems", function(req,res){
   var listId = req.body[0];
 
@@ -21,6 +21,7 @@ router.post("/gettodoitems", function(req,res){
   })
 });
 
+// delete a todolist by it's id
 router.post("/deletetodolist",function(req,res){
   var id = req.body[0];
 
@@ -30,14 +31,16 @@ router.post("/deletetodolist",function(req,res){
   res.send(response);
 });
 
+// delete a todo item by it's id
 router.post("/deletetodoitem", function(req,res){
   var id = req.body[0];
   todoItems.removeTodoById(id);
-  
+
   var response = [];
   res.send(response)
 });
 
+// add a todoitem to a specifik list
 router.post("/addtodoitem", function(req,res){
   var desc = req.body[0]
   var listId = req.body[1];
@@ -49,6 +52,7 @@ router.post("/addtodoitem", function(req,res){
   });
 });
 
+// add a todolist for a spceifik user
 router.post("/addtodolist", function(req,res){
   var date = req.body[1];
   var desc = req.body[0];
@@ -60,5 +64,5 @@ router.post("/addtodolist", function(req,res){
   });
 });
 
-
+// export our router
 module.exports = router;
